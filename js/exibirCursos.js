@@ -14,11 +14,13 @@ btnExibirCursos.addEventListener("click", ()=>{
     xhr.addEventListener("load", ()=>{
         var resposta = xhr.responseText;
         var cursos = JSON.parse(resposta);
-        console.log(cursos)
-        cursos.forEach((item)=>{
+        for(var i=0; i<cursos.length; i++){
+
+            var item = cursos[i]
+            console.log(item)
+            
             if(!item.enabled){
                 console.log(item.course.name," from ",item.university.name," is not enabled")
-                return
             }else{
                 var campusName = item.campus.name
                 var cidade = item.campus.city
@@ -35,11 +37,9 @@ btnExibirCursos.addEventListener("click", ()=>{
                 var university = item.university.name
                 var score = item.university.score         
                 var logo = item.university.logo_url
-                
-                criarModal(logo,curso,kind,level,university,score,campusName,cidade,preco)
-                criaLinhaTabela(logo,curso,cidade,preco)
-                
+                criarModal(logo,curso,kind,level,university,score,campusName,cidade,preco,i)      
+                criaLinhaTabela(logo,curso,cidade,preco,i)           
             }
-        });
-    })
+        }
+    })    
 })
