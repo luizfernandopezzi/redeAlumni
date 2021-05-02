@@ -31,3 +31,15 @@ body {
 .invisivel {
   display: none;
 }
+
+img {
+  height: 75px;
+  border: darkblue;
+  border-style: solid;
+}
+
+.imgModal {
+  height: 50px;
+  border: darkblue;
+  border-style: solid;
+}

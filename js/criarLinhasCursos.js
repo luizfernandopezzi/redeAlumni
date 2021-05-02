@@ -1,13 +1,15 @@
 let tabelaCorpo = document.querySelector(".tabela-corpo")
 
 const btnModal = `
-    <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Launch demo modal
-    </button>
+<button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Detalhes
+            </button>
+    
 `
 
-export function criarModal (logo,curso,kind,level,universidade,score,campus,cidade,preco){
-const modal = `
+export function criarModal (logo,curso,kind,level,university,score,campus,cidade,preco){
+
+var modal = `
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -18,21 +20,26 @@ const modal = `
                 <div class="modal-body">
                     <table class="modal-body">
                         <tbody class="container-fluid">
-                            <tr class="row">
-                                <td class="col-md-3 ms-auto"><img src="${logo}"></td>
-                                <td class="col-md-3 ms-auto">
-                                    <ul>
-                                        <li>${curso}-${kind}</li>
+                            <tr class="row text-center">
+                                <td class="col-4 ms-auto"><img class="imgModal" alt="Logotipo da Universidade" src="${logo}"></td>
+                                <td class="col ms-auto text-center">
+                                    <ul class="text-center">
+                                        <li>${curso} - ${kind}</li>
                                         <li>${level}</li>
                                     </ul>
                                 </td>
                             </tr>
-                            <tr class="row">
-                                <td class="col-md-3 ms-auto">${universidade}/${score}</td>
-                                <td class="col-md-3 ms-auto">${campus}/${cidade}</td>
+                            <tr class="row text-center">
+                                <td class="col-4 ms-auto">Universidade/Nota ${university}/${score}</td>
+                                <td class="col ms-auto text-center">
+                                    <ul class="text-center">                                   
+                                        <li class="col ms-auto">Campus/Cidade</li>
+                                        <li class="col ms-auto">${campus}/${cidade}</li>
+                                    </ul>
+                                </td>
                             </tr>
-                            <tr class="row">
-                                <td class="col-md-3 ms-auto">${preco}</td>
+                            <tr class="row text-center">
+                                <td class="col ms-auto">Preço: ${preco}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -43,6 +50,8 @@ const modal = `
     </div>
 `
     let modalDetalhe = document.createElement("div")
+    modalDetalhe.innerHTML = modal
+
     let fieldSetModais = document.querySelector(".modais")
     fieldSetModais.appendChild(modalDetalhe)
 }
@@ -50,14 +59,14 @@ const modal = `
 export function criaLinhaTabela (logo,curso,cidade,preco){   
 
     let tabelaLinhaContent = `
-        <td class="tabela-logo align-middle"><img src="${logo}"></td>
-        <td class="tabela-curso align-middle">${curso}</td>
-        <td class="tabela-cidade align-middle">${cidade}</td>
-        <td class="tabela-preco align-middle">${preco}</td>
-        <td class="tabela-detalhes align-middle">${btnModal}</td>
+        <td class="tabela-logo align-middle text-center"><img src="${logo}"></td>
+        <td class="tabela-curso align-middle text-center">${curso}</td>
+        <td class="tabela-cidade align-middle text-center">${cidade}</td>
+        <td class="tabela-preco align-middle text-center">${preco}</td>
+        <td class="tabela-detalhes align-middle text-center">${btnModal}</td>
     `
     let novaLinhaCurso = document.createElement("tr")
-    novaLinhaCurso.classList.add("tabela-linha")
+    novaLinhaCurso.classList.add("tabela-linha")    
     novaLinhaCurso.innerHTML = tabelaLinhaContent
-    tabelaCorpo.appendChild(novaLinhaCurso)
+    tabelaCorpo.appendChild(novaLinhaCurso)   
 }
