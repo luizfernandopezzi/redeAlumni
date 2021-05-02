@@ -1,0 +1,33 @@
+:root {
+  --font-family: "Roboto", sans-serif;
+
+  --font-peso-input: 300;
+
+  --font-tamanho-logo: 28px;
+  --font-tamanho-cartao-titulo: 28px;
+  --font-tamanho-input-label: 20px;
+  --font-tamanho-botao: 22px;
+  --font-tamanho-formulario-fieldset: 22px;
+  --font-tamanho-tabela-cabecalho: 22px;
+  --font-tamanho-modal-titulo: 28px;
+  --font-tamanho-modal-botao: 28px;
+
+  --color-titleprincipal-blue: #18acc4;
+  --color-titlesecond-blue: #007a8d;
+  --color-input: #1f2d30;
+  --color-inputbackground: #ddd;
+  --color-text: #eee;
+}
+
+body {
+  font-style: var(--font-family);
+}
+
+.input-filtro {
+  color: var(--color-input);
+  background-color: var(--color-inputbackground);
+}
+
+.invisivel {
+  display: none;
+}
