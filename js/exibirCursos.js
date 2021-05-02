@@ -37,9 +37,13 @@ btnExibirCursos.addEventListener("click", ()=>{
                 var university = item.university.name
                 var score = item.university.score         
                 var logo = item.university.logo_url
+
                 criarModal(logo,curso,kind,level,university,score,campusName,cidade,preco,i)      
                 criaLinhaTabela(logo,curso,cidade,preco,i)           
             }
         }
+        $(document).ready(function() {
+            $('#tabelaCursos').DataTable({searching: false, language:{"emptyTable": "Clique no botão Exibir todos os cursos para carregar a lista de cursos"}});
+            });
     })    
 })
