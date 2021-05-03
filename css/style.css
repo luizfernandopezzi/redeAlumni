@@ -1,31 +1,94 @@
 :root {
   --font-family: "Roboto", sans-serif;
 
-  --font-peso-input: 300;
+  --fonte-peso-input: 300;
 
-  --font-tamanho-logo: 28px;
-  --font-tamanho-cartao-titulo: 28px;
-  --font-tamanho-input-label: 20px;
-  --font-tamanho-botao: 22px;
-  --font-tamanho-formulario-fieldset: 22px;
-  --font-tamanho-tabela-cabecalho: 22px;
-  --font-tamanho-modal-titulo: 28px;
-  --font-tamanho-modal-botao: 28px;
+  --fonte-tamanho-logo: 28px;
+  --fonte-tamanho-cartao-titulo: 28px;
+  --fonte-tamanho-input-label: 20px;
+  --fonte-tamanho-botao: 22px;
+  --fonte-tamanho-formulario-fieldset: 22px;
+  --fonte-tamanho-tabela-cabecalho: 22px;
+  --fonte-tamanho-modal-titulo: 28px;
+  --fonte-tamanho-modal-botao: 28px;
 
   --color-titleprincipal-blue: #18acc4;
   --color-titlesecond-blue: #007a8d;
   --color-input: #1f2d30;
   --color-inputbackground: #ddd;
   --color-text: #eee;
+  --cor-aviso: #df2525;
 }
 
 body {
   font-style: var(--font-family);
 }
 
-.input-filtro {
+.input-container {
+  position: relative;
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+  display: inline-block;
+  width: 35%;
+}
+
+.input {
   color: var(--color-input);
   background-color: var(--color-inputbackground);
+  box-sizing: border-box;
+  padding: 1.375rem 0.5rem 0.5rem;
+  height: 3.25rem;
+  width: 100%;
+}
+
+.input::placeholder {
+  visibility: hidden;
+  color: #00000000;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.input-container--invalido {
+  margin-bottom: 0.5rem;
+}
+
+.input-container--invalido .input {
+  border: 1px solid var(--cor-aviso);
+  border-radius: 7px;
+}
+
+.input-label {
+  position: absolute;
+  top: 1.375rem;
+  left: 0.5rem;
+  font-size: var(--fonte-tamanho-input-label);
+
+  transition: all 0.25s;
+}
+
+.input-container--invalido .input-label,
+.input-container--invalido .input {
+  color: var(--cor-aviso);
+}
+
+.input-mensagem--erro {
+  display: none;
+}
+
+.input-container--invalido .input-mensagem--erro {
+  color: var(--cor-aviso);
+  display: block;
+  margin-top: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+.input:not(:placeholder-shown) + .input-label,
+.input:focus + .input-label {
+  font-size: 0.875rem;
+  top: 0.25rem;
+  transition: all 0.25s;
 }
 
 .invisivel {
@@ -42,4 +105,21 @@ img {
   height: 50px;
   border: darkblue;
   border-style: solid;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex--centro {
+  align-items: center;
+  justify-content: center;
+}
+
+.flex--coluna {
+  flex-direction: column;
+}
+
+.dataTables_filter {
+  display: none;
 }

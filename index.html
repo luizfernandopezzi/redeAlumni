@@ -16,7 +16,7 @@
       <!--DataTabeles-->
       <link href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css" rel="stylesheet">  
     
-    <title>Biblioteca de Cursos</title>    
+    <title>Rede Alumni</title>    
 </head>
 
 <body>
@@ -29,23 +29,47 @@
    </header>
 
    <main>
-    <fieldset class="filtros container mt-4">
+
+    <fieldset class="filtros container mt-4 flex flex--coluna">
         <h2 class="titulo-principal">Filtre o seu curso, cidade e preço:</h2>
-        <div class="filtro mt-4 mb-4">
-            <label for="filtrar-cidade">Cidade:</label>
-            <input class="input-filtro" type="text" name="filtro" id="filtrar-cidade" placeholder="Digite a cidade">
+        <div></div>
+            <div class="input-container">                
+                <input class="input" type="text" name="filtroCidade" id="filtrar-cidade" placeholder="Digite a cidade">
+                <label class="input-label" for="filtrar-cidade">Cidade:</label>
+                <span class="input-mensagem--erro"></span>
+            </div>
 
-            <label for="filtrar-curso">Curso:</label>
-            <input class="input-filtro" type="text" name="filtro" id="filtrar-curso" placeholder="Digite o curso">
-
-            <label for="filtrar-preco">Preço:</label>
-            <input class="input-filtro" type="text" name="filtro" id="filtrar-preco" placeholder="Digite o preço">
+            <div class="input-container">
+                <input class="input" type="text" name="filtroCurso" id="filtrar-curso" placeholder="Digite o curso">
+                <label class="input-label" for="filtrar-curso">Curso:</label>
+                
+                <span class="input-mensagem--erro"></span>
+            </div>
         </div>
-    </fieldset>    
 
-    <fieldset class="tabela-cursos container">
-        <button type="button" class="btn btn-primary btn-exibir-cursos m-3">Exibir todos os cursos</button>
+            <div class="input-container">
+                    <input class="input input-price" type="text" id="min" name="min" placeholder="R$0,00">
+                    <label class="input-label" for="min">Preço Mínimo:</label>
+                    
+                    <span class="input-mensagem--erro"></span>
+            </div>
+
+             <div class="input-container">
+                    <input class="input input-price" type="text" id="max" name="max" placeholder="R$0,00">
+                    <label class="input-label" for="max">Preço Máximo:</label>
+                    
+                    <span class="input-mensagem--erro"></span>
+            </div> 
         
+           
+        <div class="filtros mt-4 mb-4">
+            <button type="button" class="btn btn-primary btn-exibir-cursos m-3" id="btnExibirCursos">Exibir todos os cursos</button>
+        </div>      
+
+    </fieldset>
+    
+
+    <fieldset class="tabela-cursos container">   
         <table class="table display" id="tabelaCursos">
             <thead class="tabela-cabecalho">
                 <tr>
@@ -59,19 +83,22 @@
 
             <tbody class="tabela-corpo">
                 
+                
             </tbody>
         </table>
+
     </fieldset>
 
-    <fieldset class="modais">
-        
-    </fieldset>    
+    <fieldset class="modais"></fieldset>    
 
    </main>
    <footer></footer>
 
     <script type="module" src="./js/exibirCursos.js" defer></script>
     <script type="module" src="./js/filtro.js" defer></script>
+    <script type="module" src="./js/validations.js" defer></script>
+    
+    <script src="https://github.com/codermarcos/simple-mask-money/releases/download/v3.0.0/simple-mask-money.js"></script>
 
     <!--Boostratp-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>

@@ -1,7 +1,7 @@
 import { criaLinhaTabela, criarModal } from "./criarLinhasCursos.js"
 
 
-let btnExibirCursos = document.querySelector(".btn-exibir-cursos")
+let btnExibirCursos = document.querySelector("#btnExibirCursos")
 
 btnExibirCursos.addEventListener("click", ()=>{
     console.log("Buscando todos os cursos")
@@ -16,9 +16,7 @@ btnExibirCursos.addEventListener("click", ()=>{
         var cursos = JSON.parse(resposta);
         for(var i=0; i<cursos.length; i++){
 
-            var item = cursos[i]
-            console.log(item)
-            
+            var item = cursos[i]            
             if(!item.enabled){
                 console.log(item.course.name," from ",item.university.name," is not enabled")
             }else{
@@ -41,9 +39,25 @@ btnExibirCursos.addEventListener("click", ()=>{
                 criarModal(logo,curso,kind,level,university,score,campusName,cidade,preco,i)      
                 criaLinhaTabela(logo,curso,cidade,preco,i)           
             }
-        }
+        } 
+         
         $(document).ready(function() {
-            $('#tabelaCursos').DataTable({searching: false, language:{"emptyTable": "Clique no botão Exibir todos os cursos para carregar a lista de cursos"}});
+            var table = $('#tabelaCursos').DataTable({
+                order: [],
+                columnDefs: [ {
+                    'targets': [0],
+                    'orderable': false, /* true or false */
+                }],
+                language: {
+                    "url": "../ptBrDataTable.json"}        
             });
-    })    
+             
+            // Event listener to the two range filtering inputs to redraw on input
+            $('#min, #max').keyup( function() {
+                table.draw();
+            } );
+        } );
+    })
+    
+    btnExibirCursos.classList.add("invisivel")    
 })
