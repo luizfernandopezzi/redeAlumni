@@ -1,1 +1,13 @@
+ Considerações:
  
+ 1) No atual momento o arquivo API encontras-se com apenas 3 itens. Além disso, o código está incompleto. Estão faltando algumas chaves de fechamento dos objetos e portanto, ao ler a URL do API, o código retorna erro.
+  
+  1.1) A fim de contornar tal situação, fiz uma cópia do API, realizei as correções e salvei um arquivo data.json, o qual atualmente está sendo chamado no código final do projeto.
+  1.2) Assim que o API for corrigido, basta realizar o seguint procedimento no arquivo exibirCursos.js:  
+    
+    Linha 11: xhr.open("GET", "../data.json");
+    Linha 12: //xhr.open("GET", "https://testapi.io/api/Jonas-buriti/scholarships") //API está incorreto, faltando fechamentos dos objetos. Criei um data.json a partir dos dados   disponibilizados e corrigi os erros para rodar o caso. Assim que os dados do API estiverem corretos, para correto funcionamento do código, retirar as // do início da linha 12 e colocar // no início da linha 11.
+    
+2) O código está com as variáveis, atributos e parâmetros parcialmente em português. Julgo que é importante utilizar o ingles para nomeação de tais items, assim, é algo que pode/deve ser implementado.
+
+3) Também reconheço que há margem para otimização da semântica do HTML, o que novamente, pode/deve ser implementado.
