@@ -35,6 +35,8 @@ camposFiltroPreco.forEach((item)=>{
 
 
 var campoFiltroCurso = document.querySelector("#filtrar-curso");
+var campoFiltroCidade = document.querySelector("#filtrar-cidade");
+
 campoFiltroCurso.addEventListener('input',(evento)=>{
     var curso = campoFiltroCurso.value
     var regEx = /^[A-Za-z áàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ'\s]*$/i;
@@ -48,7 +50,7 @@ campoFiltroCurso.addEventListener('input',(evento)=>{
         }
 })
 
-var campoFiltroCidade = document.querySelector("#filtrar-cidade");
+
 campoFiltroCidade.addEventListener('input',(evento)=>{
     var cidade = campoFiltroCidade.value
     var regEx = /^[A-Za-z áàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ'\s]*$/i;

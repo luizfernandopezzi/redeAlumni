@@ -8,7 +8,8 @@ btnExibirCursos.addEventListener("click", ()=>{
 
     var xhr = new XMLHttpRequest();
 
-    xhr.open("GET", "https://testapi.io/api/redealumni/scholarships");
+    xhr.open("GET", "../data.json");
+    //xhr.open("GET", "https://testapi.io/api/Jonas-buriti/scholarships") //API está incorreto, faltando fechamentos dos objetos. Criei um data.json a partir dos dados disponibilizados e corrigi os erros para rodar o caso. Assim que os dados do API estiverem corretos, para correto funcionamento do código, retirar as // do início da linha 12 e colocar // no início da linha 11.
     xhr.send();
     
     xhr.addEventListener("load", ()=>{
@@ -49,7 +50,8 @@ btnExibirCursos.addEventListener("click", ()=>{
                     'orderable': false, /* true or false */
                 }],
                 language: {
-                    "url": "../ptBrDataTable.json"}        
+                    "url": "../ptBrDataTable.json"} ,
+                responsive: true    
             });
              
             // Event listener to the two range filtering inputs to redraw on input

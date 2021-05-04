@@ -10,29 +10,29 @@ export function criarModal (logo,curso,kind,level,university,score,campus,cidade
                         <h5 class="modal-title" id="exampleModalLabel">Dealhes</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body container mt-4 flex flex--coluna cartao-modal">
                         <table class="modal-body">
                             <tbody class="container-fluid">
-                                <tr class="row text-center">
+                                <tr class="row justify-content-between">
                                     <td class="col-4 ms-auto"><img class="imgModal" alt="Logotipo da Universidade" src="${logo}"></td>
                                     <td class="col ms-auto text-center">
-                                        <ul class="text-center">
-                                            <li>${curso} - ${kind}</li>
+                                        <ul class="text-center no-bullets">
+                                            <li class="course-name-kind">${curso} - ${kind}</li>
                                             <li>${level}</li>
                                         </ul>
                                     </td>
                                 </tr>
-                                <tr class="row text-center">
-                                    <td class="col-4 ms-auto">Universidade/Nota ${university}/${score}</td>
+                                <tr class="row justify-content-between">
+                                    <td class="col-4 ms-auto university-name-score">Universidade/Nota: ${university}/${score}</td>
                                     <td class="col ms-auto text-center">
-                                        <ul class="text-center">                                   
-                                            <li class="col ms-auto">Campus/Cidade</li>
+                                        <ul class="justify-content-between no-bullets">                                   
+                                            <li class="col ms-auto">Campus/Cidade:</li>
                                             <li class="col ms-auto">${campus}/${cidade}</li>
                                         </ul>
                                     </td>
                                 </tr>
                                 <tr class="row text-center">
-                                    <td class="col ms-auto">Preço: ${preco}</td>
+                                    <td class="col ms-auto mt-3">Preço: ${preco}</td>
                                 </tr>
                             </tbody>
                         </table>

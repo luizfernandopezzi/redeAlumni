@@ -1,27 +1,41 @@
 :root {
   --font-family: "Roboto", sans-serif;
 
-  --fonte-peso-input: 300;
-
-  --fonte-tamanho-logo: 28px;
-  --fonte-tamanho-cartao-titulo: 28px;
-  --fonte-tamanho-input-label: 20px;
-  --fonte-tamanho-botao: 22px;
-  --fonte-tamanho-formulario-fieldset: 22px;
-  --fonte-tamanho-tabela-cabecalho: 22px;
-  --fonte-tamanho-modal-titulo: 28px;
-  --fonte-tamanho-modal-botao: 28px;
-
   --color-titleprincipal-blue: #18acc4;
   --color-titlesecond-blue: #007a8d;
+
   --color-input: #1f2d30;
   --color-inputbackground: #ddd;
-  --color-text: #eee;
+
+  --color-body-bg: #eee
+
+  --color-text: #555;
   --cor-aviso: #df2525;
+
+  --sombra: 0 5px 10px black;
 }
 
 body {
   font-style: var(--font-family);
+  background-color: var(--color-body-bg);
+}
+
+.navbar-bg {
+  background-color: black;
+}
+
+.title {
+  color: var(--color-titleprincipal-blue);
+  font-size: 2rem;
+}
+
+.subtitle {
+  color: #007a8d;
+  font-weight: 400;
+}
+
+.text {
+  color: var(--color-text);
 }
 
 .input-container {
@@ -39,6 +53,7 @@ body {
   padding: 1.375rem 0.5rem 0.5rem;
   height: 3.25rem;
   width: 100%;
+  border-radius: 5px;
 }
 
 .input::placeholder {
@@ -63,7 +78,7 @@ body {
   position: absolute;
   top: 1.375rem;
   left: 0.5rem;
-  font-size: var(--fonte-tamanho-input-label);
+  font-size: 20px;
 
   transition: all 0.25s;
 }
@@ -122,4 +137,70 @@ img {
 
 .dataTables_filter {
   display: none;
+}
+
+.btn-exibir-cursos:hover {
+  background-color: var(--color-titleprincipal-blue);
+  border-color: var(--color-titleprincipal-blue);
+  color: white;
+  opacity: 0.7
+}
+
+.btn-exibir-cursos {
+  border-color: var(--color-titlesecond-blue);
+  background-color: var(--color-inputbackground);
+  color: var(--color-input);
+  border-radius: 5px;
+}
+
+ul.no-bullets {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+legend {
+  font-size: 1.5rem;
+  color: white;
+  opacity: 0.8;
+}
+
+.text-cabecalho{
+  font-weight: bold;
+}
+
+.cartao {
+  background-color: var(--color-titlesecond-blue);
+  border-radius: 10px;
+  box-shadow: var(--sombra);
+  width: 100%;
+  max-width: 95%;
+  padding: 1.25rem;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+}
+
+.university-name-score,
+.course-name-kind {
+  font-weight: bold;
+  text-align: center;
+}
+
+.cartao-modal{
+  background-color: var(--color-inputbackground);
+  border-radius: 10px;
+  box-shadow: var(--sombra);
+  width: 100%;
+  max-width: 95%;
+  padding: 1.25rem;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+}
+
+.footer-contents {
+  background-color: black;
+  color: var(--color-titlesecond-blue);
+  font-weight: 50;
+  font-size: 0.75rem;
+  margin: 0;
 }
